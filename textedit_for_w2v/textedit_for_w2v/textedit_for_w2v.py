@@ -1,7 +1,7 @@
 import csv
 import numpy 
 
-ifile=open("test2.csv","r")
+ifile=open("test.csv","r")
 
 data=csv.reader(ifile)
 csvwriter=csv.writer(file)
@@ -9,7 +9,7 @@ csvwriter=csv.writer(file)
 next(data)
 
 for line in data:     
-    wfile=open("file/"+str(line[0])+".txt","wb")
+    wfile=open("file/"+str(line[0]),"wb")
     text=str(line[1])
     text=text.lower()
     text=text.replace(".","")
