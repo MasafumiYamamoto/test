@@ -1,0 +1,48 @@
+import csv
+import numpy 
+
+ifile=open("test2.csv","r")
+
+data=csv.reader(ifile)
+csvwriter=csv.writer(file)
+
+next(data)
+
+for line in data:     
+    wfile=open("file/"+str(line[0])+".txt","wb")
+    text=str(line[1])
+    text=text.lower()
+    text=text.replace(".","")
+    text=text.replace(")","")
+    text=text.replace("(","")
+    text=text.replace(";","")
+    text=text.replace("!","")
+    text=text.replace("?","")
+    text=text.replace('"',"")
+    text=text.replace(",","")
+    text=text.replace("'","")
+    text=text.replace("`","")
+    text=text.replace("\\","")
+    text=text.replace("[","")
+    text=text.replace("]","")
+    text=text.replace("{","")
+    text=text.replace("}","")
+    text=text.replace("¢","")
+    text=text.replace("£","")
+    text=text.replace("|","")
+    text=text.replace("^","")
+    text=text.replace("~","")
+    text=text.replace("-","")
+    text=text.replace(":","")
+    text=text.replace(">","")
+    text=text.replace("<","")
+    text=text.replace("/","")
+    text=text.replace("=","")
+    text=text.replace("+","")
+    text=text.replace("*","")
+    text=text.replace("\n","\t")
+    text=text.expandtabs(1)
+    wfile.write(text)
+    wfile.close()
+
+ifile.close()
